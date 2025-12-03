@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SplashScreen from "./components/SplashScreen";
-import ThemeToggle from "./components/ThemeToggle";
 import Home from "./pages/Home";
+import MemberDetail from "./pages/MemberDetail";
+import { ThemeProvider } from "./context/ThemeContext";
 
-export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  if (showSplash) return <SplashScreen onFinish={() => setShowSplash(false)} />;
-
+function App() {
   return (
-    <div className="p-4">
-      <div className="flex justify-end">
-        <ThemeToggle />
-      </div>
-      <Home />
-    </div>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SplashScreen />} />
+          <Route path="/members" element={<Home />} />
+          <Route path="/members/:id" element={<MemberDetail />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
-
- 
+export default App;

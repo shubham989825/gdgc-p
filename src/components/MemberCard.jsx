@@ -1,29 +1,47 @@
-export default function MemberCard({ member }) {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const MemberCard = ({ member }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 shadow-md rounded-xl">
+    <div className="glass member-card" style={{ padding: '20px', textAlign: 'center', transition: 'transform 0.3s' }}>
       <img
         src={member.photo}
         alt={member.name}
-        className="h-32 w-32 rounded-full mx-auto"
+        style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', marginBottom: '15px', border: '3px solid var(--primary-color)' }}
       />
+      <h3 style={{ margin: '10px 0', color: 'var(--text-color)' }}>{member.name}</h3>
+      <p style={{ color: 'var(--secondary-color)', fontWeight: 'bold', margin: '5px 0' }}>{member.role}</p>
+      <p style={{ fontSize: '0.9rem', color: 'var(--text-color)', opacity: 0.8 }}>{member.location}</p>
 
-      <h2 className="text-xl font-semibold text-center mt-2">{member.name}</h2>
-      <p className="text-center text-blue-600">{member.role}</p>
-
-      <p className="text-sm mt-2 text-gray-600 dark:text-gray-300">
-        {member.bio}
-      </p>
-
-      <div className="mt-2 flex flex-wrap gap-2 justify-center">
-        {member.skills.map((skill, i) => (
-          <span
-            key={i}
-            className="px-2 py-1 bg-blue-100 dark:bg-gray-700 rounded-md text-sm"
-          >
+      <div style={{ margin: '15px 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '5px' }}>
+        {member.skills.map((skill, index) => (
+          <span key={index} style={{
+            backgroundColor: 'var(--primary-color)',
+            color: 'white',
+            padding: '4px 8px',
+            borderRadius: '12px',
+            fontSize: '0.8rem'
+          }}>
             {skill}
           </span>
         ))}
       </div>
+
+      <p style={{ fontSize: '0.9rem', fontStyle: 'italic', marginBottom: '15px' }}>"{member.bio}"</p>
+
+      <Link to={`/members/${member.id}`} style={{
+        display: 'inline-block',
+        padding: '8px 16px',
+        backgroundColor: 'var(--accent-color)',
+        color: 'white',
+        textDecoration: 'none',
+        borderRadius: '8px',
+        fontWeight: 'bold'
+      }}>
+        View Profile
+      </Link>
     </div>
   );
-}
+};
+
+export default MemberCard;

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SplashScreen from "../frontend/components/SplashScreen";
-import ThemeToggle from "../frontend/components/ThemeToggle";
-import Home from "../frontend/pages/Home";
+import SplashScreen from "../../frontend/components/SplashScreen";
+import ThemeToggle from "../../frontend/components/ThemeToggle";
+import Home from "../../frontend/pages/Home";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);

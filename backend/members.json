@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Shubham Pratap Singh",
+    "role": "Frontend Developer",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "location": "Indore",
+    "bio": "Passionate about clean UI and animations.",
+    "photo": "https://i.pravatar.cc/300?img=1"
+  },
+  {
+    "id": 2,
+    "name": "Lakshay Chouhan",
+    "role": "Backend Developer",
+    "skills": ["Node.js", "Express", "APIs"],
+    "location": "Bhopal",
+    "bio": "Loves building robust APIs and data models.",
+    "photo": "https://i.pravatar.cc/300?img=2"
+  },
+  {
+    "id": 3,
+    "name": "Priya Verma",
+    "role": "UI/UX Designer",
+    "skills": ["Figma", "Prototyping", "User Research"],
+    "location": "Mumbai",
+    "bio": "Designs delightful user-centred experiences.",
+    "photo": "https://i.pravatar.cc/300?img=3"
+  },
+  {
+    "id": 4,
+    "name": "Amit Patel",
+    "role": "Fullstack Developer",
+    "skills": ["React", "Node.js", "Postgres"],
+    "location": "Ahmedabad",
+    "bio": "Bridges design and code for seamless apps.",
+    "photo": "https://i.pravatar.cc/300?img=4"
+  }
+]
